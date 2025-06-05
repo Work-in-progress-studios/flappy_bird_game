@@ -12,7 +12,7 @@ class Clouds extends ParallaxComponent<FlappyBirdGame>
   @override
   Future<void> onLoad() async {
     final image = await Flame.images.load(Assets.clouds);
-    position = Vector2(x, -(gameRef.size.y - Config.cloudsHeight));
+    position = Vector2(x, -(game.size.y - Config.cloudsHeight));
     parallax = Parallax([
       ParallaxLayer(
         ParallaxImage(image, fill: LayerFill.none),

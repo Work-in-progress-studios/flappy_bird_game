@@ -16,14 +16,14 @@ class Bird extends SpriteGroupComponent<BirdMovement>
 
   @override
   Future<void> onLoad() async {
-    final birdMidFlap = await gameRef.loadSprite(Assets.birdMidFlap);
-    final birdUpFlap = await gameRef.loadSprite(Assets.birdUpFlap);
-    final birdDownFlap = await gameRef.loadSprite(Assets.birdDownFlap);
+    final birdMidFlap = await game.loadSprite(Assets.birdMidFlap);
+    final birdUpFlap = await game.loadSprite(Assets.birdUpFlap);
+    final birdDownFlap = await game.loadSprite(Assets.birdDownFlap);
 
-    gameRef.bird;
+    game.bird;
 
     size = Vector2(50, 40);
-    position = Vector2(50, gameRef.size.y / 2 - size.y / 2);
+    position = Vector2(50, game.size.y / 2 - size.y / 2);
     current = BirdMovement.middle;
     sprites = {
       BirdMovement.middle: birdMidFlap,
@@ -66,14 +66,14 @@ class Bird extends SpriteGroupComponent<BirdMovement>
   }
 
   void reset() {
-    position = Vector2(50, gameRef.size.y / 2 - size.y / 2);
+    position = Vector2(50, game.size.y / 2 - size.y / 2);
     score = 0;
   }
 
   void gameOver() {
     FlameAudio.play(Assets.collision);
     game.isHit = true;
-    gameRef.overlays.add('gameOver');
-    gameRef.pauseEngine();
+    game.overlays.add('gameOver');
+    game.pauseEngine();
   }
 }

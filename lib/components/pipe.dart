@@ -28,7 +28,7 @@ class Pipe extends SpriteComponent with HasGameReference<FlappyBirdGame> {
         sprite = Sprite(pipeRotated);
         break;
       case PipePosition.bottom:
-        position.y = gameRef.size.y - size.y - Config.groundHeight;
+        position.y = game.size.y - size.y - Config.groundHeight;
         sprite = Sprite(pipe);
         break;
     }

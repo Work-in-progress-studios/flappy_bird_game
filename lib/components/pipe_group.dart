@@ -15,9 +15,9 @@ class PipeGroup extends PositionComponent
 
   @override
   Future<void> onLoad() async {
-    position.x = gameRef.size.x;
+    position.x = game.size.x;
 
-    final heightMinusGround = gameRef.size.y - Config.groundHeight;
+    final heightMinusGround = game.size.y - Config.groundHeight;
     final spacing = 100 + _random.nextDouble() * (heightMinusGround / 4);
     final centerY =
         spacing + _random.nextDouble() * (heightMinusGround - spacing);
@@ -31,7 +31,7 @@ class PipeGroup extends PositionComponent
   }
 
   void updateScore() {
-    gameRef.bird.score += 1;
+    game.bird.score += 1;
     FlameAudio.play(Assets.point);
   }
 
@@ -45,9 +45,9 @@ class PipeGroup extends PositionComponent
       updateScore();
     }
 
-    if (gameRef.isHit) {
+    if (game.isHit) {
       removeFromParent();
-      gameRef.isHit = false;
+      game.isHit = false;
     }
   }
 }
