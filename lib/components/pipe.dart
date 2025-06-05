@@ -6,7 +6,7 @@ import 'package:flappy_bird_game/game/configuration.dart';
 import 'package:flappy_bird_game/game/flappy_bird_game.dart';
 import 'package:flappy_bird_game/game/pipe_position.dart';
 
-class Pipe extends SpriteComponent with HasGameRef<FlappyBirdGame> {
+class Pipe extends SpriteComponent with HasGameReference<FlappyBirdGame> {
   Pipe({
     required this.pipePosition,
     required this.height,

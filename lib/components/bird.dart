@@ -9,7 +9,7 @@ import 'package:flappy_bird_game/game/flappy_bird_game.dart';
 import 'package:flutter/material.dart';
 
 class Bird extends SpriteGroupComponent<BirdMovement>
-    with HasGameRef<FlappyBirdGame>, CollisionCallbacks {
+    with HasGameReference<FlappyBirdGame>, CollisionCallbacks {
   Bird();
 
   int score = 0;

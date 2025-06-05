@@ -7,9 +7,9 @@ class MainMenuScreen extends StatelessWidget {
   static const String id = 'mainMenu';
 
   const MainMenuScreen({
-    Key? key,
+    super.key,
     required this.game,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
